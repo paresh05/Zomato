@@ -1,0 +1,32 @@
+.topBar {
+  display: flex;
+}
+.topList {
+  position: relative;
+  list-style: none;
+  display: flex;
+  left: 50%;
+}
+.topListRight {
+  position: relative;
+  list-style: none;
+  right: 50%;
+}
+.topListItem {
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.topListItemRight {
+  margin-right: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
