@@ -1,4 +1,6 @@
-import '../Topbar/topbar.css';
+import './topbar.css';
+import React from 'react';
+
 function Topbar() {
   return (
     <div className="topBar">

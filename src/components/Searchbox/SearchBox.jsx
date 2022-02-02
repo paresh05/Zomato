@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
@@ -10,7 +11,8 @@ import {
   MenuItem,
   Select,
 } from '@mui/material';
-function SearchBox(props) {
+
+function SearchBox({ location, handleChange }) {
   return (
     <Box
       sx={{
@@ -34,27 +36,27 @@ function SearchBox(props) {
           <Select
             labelId="location"
             id="location"
-            value={props.location}
+            value={location}
             label="Location"
-            onChange={props.handleChange}
+            onChange={handleChange}
             disableUnderline
             sx={{ fontFamily: 'Quicksand, sans-serif' }}
           >
             <MenuItem
               sx={{ fontFamily: 'Quicksand, sans-serif' }}
-              value={'Bengaluru'}
+              value="Bengaluru"
             >
               Bengaluru
             </MenuItem>
             <MenuItem
               sx={{ fontFamily: 'Quicksand, sans-serif' }}
-              value={'Mangalore'}
+              value="Mumbai"
             >
               Mumbai
             </MenuItem>
             <MenuItem
               sx={{ fontFamily: 'Quicksand, sans-serif' }}
-              value={'Mumbai'}
+              value="Delhi"
             >
               Delhi
             </MenuItem>
@@ -73,5 +75,12 @@ function SearchBox(props) {
     </Box>
   );
 }
-
+SearchBox.propTypes = {
+  location: PropTypes.string,
+  handleChange: PropTypes.func,
+};
+SearchBox.defaultProps = {
+  location: 'Bengaluru',
+  handleChange: { },
+};
 export default SearchBox;

@@ -3,8 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import data from './data.json';
 import { Grid } from '@mui/material';
+import data from './data.json';
+
 export default function Cards() {
   const [hover, setHover] = React.useState(false);
   return (
@@ -19,22 +20,23 @@ export default function Cards() {
         justifyContent: 'center',
       }}
     >
-      {data.map((card, index) => (
-        <Grid item key={index} align="center">
+      {data.map((card) => (
+        <Grid item key={card.id} align="center">
           <Card
             variant="outlined"
             sx={{
               width: 267.5,
               height: 240,
               borderRadius: '15px',
-              transform: `${hover[index] ? 'scale(1.05)' : null}`,
+              transform: `${hover[card.id] ? 'scale(1.05)' : null}`,
               transition: '0.3s',
+              cursor: 'pointer',
             }}
             onMouseOver={() => {
-              setHover({ [index]: true });
+              setHover({ [card.id]: true });
             }}
             onMouseLeave={() => {
-              setHover({ [index]: false });
+              setHover({ [card.id]: false });
             }}
           >
             <CardMedia
