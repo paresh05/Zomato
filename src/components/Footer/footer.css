@@ -1,11 +1,92 @@
-.footer{
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .footerColumn{
+    padding: 0px;
+    max-width: 58.3333%;
+  }
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 1%;
+  }
+  .footer {
     background-color: rgb(248, 248, 248);
-    padding: 48px 22px 90px 120px;
+    padding: 48px 60px 20px 60px;
+  }
 }
-.footerTitle{
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-family: "Quicksand", sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+.footerTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.content {
+  margin-bottom: 3rem;
+}
+p {
+  font-family: "Quicksand", sans-serif;
+  color: rgb(105, 105, 105);
+  cursor: pointer;
+}
+.socialIcons{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 0.6rem;
+    margin-right: 5rem;
+    margin-bottom: 0.6rem;
+}
+.socialLinks{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+hr.solid {
+    margin-top: 1.5rem;
+    border-width: 1px 0px 0px;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image: initial;
+    border-top-style: solid;
+    border-top-color: rgb(207, 207, 207);
+  }
+.footerTerms{
+    font-size: 0.845rem;
+    color: rgb(79, 79, 79);
+    line-height: 1.1rem;
+    margin-top: 1.2rem;
+}
+@media screen and (min-width: 800px) and (max-width: 1500px) {
+  .footerColumn{
+    position: relative;
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 18.3333%;
+    padding: 0px;
+  }
+  .footerColumns{
+    position: relative;
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 25%;
+    padding: 0px;
+  }
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2%;
+    flex-wrap: wrap;
+  }
+  .footer {
+    background-color: rgb(248, 248, 248);
+    padding: 48px 122px 20px 120px;
+  }
 }

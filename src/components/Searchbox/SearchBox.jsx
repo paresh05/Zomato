@@ -12,11 +12,17 @@ import {
   Select,
 } from '@mui/material';
 
+/**
+ * This component creates the searchbox for entering the location and searching
+ * @returns a box component for seaching and entering location
+ */
+
 function SearchBox({ location, handleChange }) {
   return (
     <Box
       sx={{
-        width: '750px',
+        maxWidth: '750px',
+        width: '75%',
         height: '3.3rem',
         backgroundColor: 'white',
         borderRadius: '0.5rem',

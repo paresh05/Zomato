@@ -1,0 +1,34 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .getAppImage {
+    display: none;
+  }
+  .appTitle {
+    font-size: 2rem;
+    color: black;
+  }
+}
+.getApp {
+  background-color: rgb(255, 251, 247);
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+}
+.appContent {
+  width: 460px;
+  padding-left: 40px;
+}
+p {
+  line-height: 1.5rem;
+}
+.downloadIcons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 290px;
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .appTitle {
+    font-size: 2.8rem;
+    color: black;
+    line-height: 2.4rem;
+  }
+}

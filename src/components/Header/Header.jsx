@@ -2,6 +2,12 @@ import React from 'react';
 import './header.css';
 import SearchBox from '../Searchbox/SearchBox';
 import Topbar from '../Topbar/Topbar';
+import { zomatoLogo } from '../../constants/images';
+
+/**
+ * This component creates the header component of the website
+ * @returns a header component with searchbox, topbar and background image
+ */
 
 function Header() {
   const [location, setLocation] = React.useState('Bengaluru');
@@ -13,7 +19,7 @@ function Header() {
       <Topbar />
       <img
         className="logo"
-        src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png"
+        src={zomatoLogo.url}
         alt="logo"
       />
       <h1 className="title">

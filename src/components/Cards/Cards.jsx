@@ -4,10 +4,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
-import data from './data.json';
+import cardApi from '../../service/loginApi';
+
+/**
+ * This component creates the cards on the dashboard page
+ * @returns a card having image and title
+ */
 
 export default function Cards() {
   const [hover, setHover] = React.useState(false);
+  const [cards, setCards] = React.useState([]);
+  const fetchCards = () => {
+    cardApi
+      .getCards()
+      .then((response) => {
+        setCards(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  React.useEffect(() => {
+    fetchCards();
+  }, []);
+
   return (
     <Grid
       container
@@ -20,7 +40,7 @@ export default function Cards() {
         justifyContent: 'center',
       }}
     >
-      {data.map((card) => (
+      {cards.map((card) => (
         <Grid item key={card.id} align="center">
           <Card
             variant="outlined"
@@ -42,7 +62,7 @@ export default function Cards() {
             <CardMedia
               component="img"
               height="180"
-              image={card.image}
+              image={card.attributes.url}
               alt="images"
             />
             <CardContent>
@@ -53,7 +73,7 @@ export default function Cards() {
                 variant="h6"
                 component="div"
               >
-                {card.title}
+                {card.attributes.title}
               </Typography>
             </CardContent>
           </Card>

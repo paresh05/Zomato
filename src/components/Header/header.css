@@ -1,3 +1,13 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .title {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
 .topbar {
   background-image: url(https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png);
   height: 420px;
@@ -11,10 +21,14 @@
   height: 60px;
   padding-top: 40px;
 }
-.title {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 500;
-  font-size: 2.3rem;
-  color: white;
-  padding-top: 10px;
+
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .title {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 2.3rem;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
+  }
 }
