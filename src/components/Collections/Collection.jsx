@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Grid } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import collectionApi from '../../service/loginApi';
+import useStyles from './collectionStyles';
 
 /**
  * This component creates the collections on the dashboard page
@@ -12,8 +14,13 @@ import collectionApi from '../../service/loginApi';
  */
 
 export default function Collection() {
+  const classes = useStyles();
   const [hover, setHover] = React.useState(false);
+  const city = useSelector((state) => state.city.location);
   const [collections, setCollections] = React.useState([]);
+  const filteredCollection = collections.filter(
+    (card) => card.attributes.location === city || card.attributes.location === 'all',
+  );
   const fetchCollections = () => {
     collectionApi
       .getCollections()
@@ -28,43 +35,54 @@ export default function Collection() {
     fetchCollections();
   }, []);
   return (
-    <Grid paddingTop={5} paddingBottom={15}>
+    <Grid paddingTop={5} paddingBottom={{ xs: 5, sm: 10, md: 15 }}>
       <Typography
-        fontFamily={'\'Quicksand\', sans-serif'}
+        fontFamily={"'Quicksand', sans-serif"}
         fontWeight={500}
         variant="h4"
         component="div"
-        paddingLeft={{ md: 15, xs: 5 }}
+        paddingLeft={{ md: 15, xs: 2 }}
       >
         Collections
       </Typography>
-      <Box sx={{ display: 'flex' }}>
+      <Box
+        className={classes.title}
+      >
         <Typography
-          fontFamily={'\'Quicksand\', sans-serif'}
+          fontFamily={"'Quicksand', sans-serif"}
           fontWeight={400}
           fontSize="18px"
           gutterBottom
           variant="h6"
           component="div"
-          paddingLeft={{ md: 15, xs: 5 }}
+          paddingLeft={{ md: 15, xs: 2 }}
         >
           Explore curated lists of top restaurants, cafes, pubs, and bars in
-          Bengaluru, based on trends
+          {` ${city}`}
+          , based on trends
         </Typography>
         <Typography
-          fontFamily={'\'Quicksand\', sans-serif'}
+          fontFamily={"'Quicksand', sans-serif"}
           fontWeight={400}
           fontSize="16px"
           gutterBottom
           variant="h6"
           component="div"
           color={hover ? 'rgb(207, 16, 32)' : 'rgb(255, 126, 139)'}
-          paddingLeft={15}
-          sx={{ cursor: 'pointer', display: { md: 'flex', xs: 'none' }, alignItems: 'center' }}
-          onMouseOver={() => { setHover(true); }}
-          onMouseLeave={() => { setHover(false); }}
+          sx={{
+            cursor: 'pointer',
+            display: { md: 'inline-flex', xs: 'none' },
+            alignItems: 'center',
+          }}
+          onMouseOver={() => {
+            setHover(true);
+          }}
+          onMouseLeave={() => {
+            setHover(false);
+          }}
         >
-          All collections in Bengaluru
+          All collections in
+          {` ${city}`}
           <PlayArrowIcon sx={{ paddingLeft: '5px' }} fontSize="18px" />
         </Typography>
       </Box>
@@ -72,19 +90,14 @@ export default function Collection() {
         container
         spacing={1}
         align="center"
-        style={{
-          paddingTop: 10,
-          paddingBottom: 20,
-          display: 'flex',
-          justifyContent: 'center',
-        }}
+        className={classes.cards}
       >
-        {collections.map((collection) => (
+        {filteredCollection.map((collection) => (
           <Grid item align="center">
             <Card
               variant="outlined"
               sx={{
-                width: 267.5,
+                width: { lg: 267.5, sm: 180, xs: 160 },
                 height: 320,
                 borderRadius: '7px',
                 cursor: 'pointer',
@@ -97,37 +110,33 @@ export default function Collection() {
                   image={collection.attributes.url}
                   alt="images"
                 />
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    width: '100%',
-                    background: 'linear-gradient(hsl(0, 0%, 60%, 0.25), black)',
-                    padding: '0 16px 0 16px',
-                  }}
-                >
+                <Box className={classes.cardTitle}>
                   <Typography
-                    fontFamily={'\'Quicksand\', sans-serif'}
+                    fontFamily={"'Quicksand', sans-serif"}
                     color="white"
                     fontWeight={400}
                     variant="h6"
                     component="div"
                     align="left"
+                    fontSize={{ lg: 20, sm: 17, xs: 14 }}
                   >
                     {collection.attributes.title}
                   </Typography>
                   <Typography
-                    fontFamily={'\'Quicksand\', sans-serif'}
+                    fontFamily={"'Quicksand', sans-serif"}
                     color="white"
                     fontWeight={300}
                     gutterBottom
                     component="div"
                     align="left"
                     sx={{ display: 'flex', alignItems: 'center' }}
+                    fontSize={{ lg: 15, sm: 13, xs: 11 }}
                   >
                     {collection.attributes.subtitle}
-                    <PlayArrowIcon sx={{ paddingLeft: '5px' }} fontSize="18px" />
+                    <PlayArrowIcon
+                      sx={{ paddingLeft: '5px' }}
+                      fontSize="18px"
+                    />
                   </Typography>
                 </Box>
               </Box>

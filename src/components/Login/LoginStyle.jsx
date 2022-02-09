@@ -1,8 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   email: {
-    width: '400px',
     height: '48px',
     backgroundColor: 'white',
     borderRadius: '0.5rem',
@@ -10,9 +9,11 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
     border: '1px solid rgb(207, 207, 207)',
     margin: '10px 24px 5px 24px',
+    [theme.breakpoints.up('sm')]: {
+      width: '400px',
+    },
   },
   password: {
-    width: '400px',
     height: '48px',
     backgroundColor: 'white',
     borderRadius: '0.5rem',
@@ -22,7 +23,6 @@ const useStyles = makeStyles(() => ({
     margin: '10px 24px 5px 24px',
   },
   checkbox: {
-    width: '400px',
     display: 'flex',
     margin: '0px 24px 5px 20px',
     '& p': {
@@ -32,6 +32,9 @@ const useStyles = makeStyles(() => ({
         color: 'rgb(239, 79, 95)',
         fontWeight: '600',
       },
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '400px',
     },
   },
   login: {

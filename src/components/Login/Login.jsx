@@ -5,8 +5,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
-  Box, Divider, InputBase,
+  Box, Divider, IconButton, InputAdornment, InputBase,
 } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import userConnect from '../../service/loginApi';
@@ -21,6 +23,7 @@ function Login(props) {
   const classes = useStyles();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [showPassword, setShowPassword] = React.useState(false);
   const { onClose, onOpen, login } = props;
 
   const handleClose = () => {
@@ -35,6 +38,9 @@ function Login(props) {
   };
   const handlePassword = (event) => {
     setPassword(event.target.value);
+  };
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
   };
   const onSubmit = () => {
     const data = {
@@ -76,10 +82,22 @@ function Login(props) {
         className={classes.password}
       >
         <InputBase
+          fullWidth
+          type={showPassword ? 'password' : 'text'}
           sx={{ paddingLeft: '10px', fontFamily: 'Quicksand, sans-serif' }}
           placeholder="Password"
           inputProps={{ 'aria-label': 'Password' }}
           onChange={handlePassword}
+          endAdornment={(
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          )}
         />
       </Box>
       <Button

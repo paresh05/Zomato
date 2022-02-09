@@ -1,16 +1,25 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .topListRight {
+    display: none;
+  }
+}
 .topBar {
-  display: flex;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  height: 4rem;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  top: 0px;
+  background-color: transparent;
 }
 .topList {
-  position: relative;
   list-style: none;
   display: flex;
-  left: 50%;
-}
-.topListRight {
-  position: relative;
-  list-style: none;
-  right: 50%;
+  align-items: center;
 }
 .topListItem {
   margin-right: 50px;
@@ -29,4 +38,23 @@
   cursor: pointer;
   color: white;
   text-decoration: none;
+}
+.navBar {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .topListRight {
+    list-style: none;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './header.css';
 import SearchBox from '../Searchbox/SearchBox';
 import Topbar from '../Topbar/Topbar';
@@ -10,10 +11,7 @@ import { zomatoLogo } from '../../constants/images';
  */
 
 function Header() {
-  const [location, setLocation] = React.useState('Bengaluru');
-  const handleChange = (event) => {
-    setLocation(event.target.value);
-  };
+  const city = useSelector((state) => state.city.location);
   return (
     <div className="topbar">
       <Topbar />
@@ -24,9 +22,9 @@ function Header() {
       />
       <h1 className="title">
         Discover the best food & drinks in
-        {` ${location}`}
+        {` ${city}`}
       </h1>
-      <SearchBox location={location} handleChange={handleChange} />
+      <SearchBox />
     </div>
   );
 }

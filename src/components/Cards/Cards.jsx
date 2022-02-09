@@ -45,7 +45,7 @@ export default function Cards() {
           <Card
             variant="outlined"
             sx={{
-              width: 267.5,
+              width: { lg: 267.5, sm: 180, xs: 160 },
               height: 240,
               borderRadius: '15px',
               transform: `${hover[card.id] ? 'scale(1.05)' : null}`,
@@ -72,6 +72,7 @@ export default function Cards() {
                 gutterBottom
                 variant="h6"
                 component="div"
+                fontSize={{ lg: 20, sm: 16, xs: 14 }}
               >
                 {card.attributes.title}
               </Typography>

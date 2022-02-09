@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Divider,
   FormControl,
@@ -11,38 +11,35 @@ import {
   MenuItem,
   Select,
 } from '@mui/material';
+import fetchLocation from '../../actions/cardAction';
+import useStyles from './searchboxStyle';
 
 /**
  * This component creates the searchbox for entering the location and searching
  * @returns a box component for seaching and entering location
  */
 
-function SearchBox({ location, handleChange }) {
+function SearchBox() {
+  const dispatch = useDispatch();
+  const classes = useStyles();
+  const city = useSelector((state) => state.city.location);
+  const handleChange = (event) => {
+    dispatch(fetchLocation(event.target.value));
+  };
   return (
-    <Box
-      sx={{
-        maxWidth: '750px',
-        width: '75%',
-        height: '3.3rem',
-        backgroundColor: 'white',
-        borderRadius: '0.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        mt: '10px',
-      }}
-    >
+    <Box className={classes.search}>
       <IconButton
         sx={{ p: '12px', color: 'rgb(255, 126, 139)' }}
         aria-label="location"
       >
         <FmdGoodIcon />
       </IconButton>
-      <Box sx={{ flex: 2 }}>
+      <Box className={classes.location}>
         <FormControl variant="standard" fullWidth>
           <Select
             labelId="location"
             id="location"
-            value={location}
+            value={city}
             label="Location"
             onChange={handleChange}
             disableUnderline
@@ -70,7 +67,7 @@ function SearchBox({ location, handleChange }) {
         </FormControl>
       </Box>
       <Divider orientation="vertical" variant="middle" flexItem />
-      <IconButton sx={{ p: '12px' }} aria-label="search">
+      <IconButton className={classes.searchIcon} aria-label="search">
         <SearchIcon />
       </IconButton>
       <InputBase
@@ -81,12 +78,4 @@ function SearchBox({ location, handleChange }) {
     </Box>
   );
 }
-SearchBox.propTypes = {
-  location: PropTypes.string,
-  handleChange: PropTypes.func,
-};
-SearchBox.defaultProps = {
-  location: 'Bengaluru',
-  handleChange: { },
-};
 export default SearchBox;

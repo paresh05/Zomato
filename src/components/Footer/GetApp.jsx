@@ -50,7 +50,7 @@ function GetApp() {
         />
         <Button
           variant="contained"
-          style={{
+          sx={{
             width: '150px',
             height: '51px',
             background: 'rgb(232, 76, 66)',
@@ -60,6 +60,7 @@ function GetApp() {
             fontSize: '15px',
             borderRadius: '0.6rem',
             cursor: 'pointer',
+            marginTop: { sm: 1, md: 0, xs: 1 },
           }}
         >
           Share App Link
