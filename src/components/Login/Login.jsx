@@ -11,7 +11,7 @@ import {
   Box, Divider, IconButton, InputAdornment, InputBase,
 } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
-import userConnect from '../../service/loginApi';
+import userConnect from '../../service/zomatoApi';
 import useStyles from './LoginStyle';
 
 /**
@@ -50,7 +50,10 @@ function Login(props) {
     userConnect
       .login(data)
       .then((response) => {
-        console.log(response.data);
+        localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('name', response.data.user.username);
+        onClose();
+        window.location.reload(false);
       })
       .catch((e) => {
         console.log(e);
@@ -83,7 +86,7 @@ function Login(props) {
       >
         <InputBase
           fullWidth
-          type={showPassword ? 'password' : 'text'}
+          type={showPassword ? 'text' : 'password'}
           sx={{ paddingLeft: '10px', fontFamily: 'Quicksand, sans-serif' }}
           placeholder="Password"
           inputProps={{ 'aria-label': 'Password' }}

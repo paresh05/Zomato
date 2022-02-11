@@ -1,0 +1,21 @@
+.items {
+  background: rgb(248, 248, 248);
+  position: relative;
+  max-width: 110rem;
+  max-height: initial;
+  margin: 0px auto;
+  padding: 40px 100px 40px 100px ;
+}
+.itemsTitle {
+  color: rgb(28, 28, 28);
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0px 0px 3.2rem;
+  font-family: "Quicksand", sans-serif;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}

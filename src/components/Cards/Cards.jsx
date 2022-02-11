@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { Redirect } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
-import cardApi from '../../service/loginApi';
+import cardApi from '../../service/zomatoApi';
 
 /**
  * This component creates the cards on the dashboard page
@@ -14,6 +15,8 @@ import cardApi from '../../service/loginApi';
 export default function Cards() {
   const [hover, setHover] = React.useState(false);
   const [cards, setCards] = React.useState([]);
+  const [redirect, setRedirect] = React.useState(false);
+  console.log(redirect);
   const fetchCards = () => {
     cardApi
       .getCards()
@@ -58,6 +61,9 @@ export default function Cards() {
             onMouseLeave={() => {
               setHover({ [card.id]: false });
             }}
+            onClick={() => {
+              setRedirect({ [card.id]: true });
+            }}
           >
             <CardMedia
               component="img"
@@ -80,6 +86,7 @@ export default function Cards() {
           </Card>
         </Grid>
       ))}
+      {redirect[1] ? <Redirect to="/delivery" /> : null}
     </Grid>
   );
 }

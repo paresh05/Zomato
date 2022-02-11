@@ -5,6 +5,7 @@ import Explore from '../components/Footer/Explore';
 import Footer from '../components/Footer/Footer';
 import GetApp from '../components/Footer/GetApp';
 import Header from '../components/Header/Header';
+import Localities from '../components/Localities/Localities';
 
 /**
  * This component creates the dashboard page of the website
@@ -17,6 +18,7 @@ export default function Dashboard() {
       <Header />
       <Cards />
       <Collection />
+      <Localities />
       <GetApp />
       <Explore />
       <Footer />

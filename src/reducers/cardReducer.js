@@ -1,3 +1,6 @@
+/**
+ * This function is used to store the state using redux
+ */
 import ActionTypes from '../constants/actionTypes';
 
 const initialState = {

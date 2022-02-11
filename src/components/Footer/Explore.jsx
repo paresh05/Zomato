@@ -4,6 +4,7 @@ import restaurantTypes from './restaurantTypes.json';
 import restaurant from './restaurants.json';
 import cuisine from './cuisines.json';
 import cities from './cities';
+import { footer } from '../../constants/data';
 
 /**
  * This component creates the footer component for exploring the other restaurant types,
@@ -15,8 +16,8 @@ function Explore() {
   return (
     <div className="explore">
       <div className="exploreContent">
-        <h1 className="exploretitle">Explore other options for you here</h1>
-        <h2>Popular cuisines near me</h2>
+        <h1 className="exploretitle">{footer.exploreTitle}</h1>
+        <h2>{footer.cuisinesTitle}</h2>
         <div className="cuisines">
           {cuisine.map((cuisines) => (
             <>
@@ -25,7 +26,7 @@ function Explore() {
             </>
           ))}
         </div>
-        <h2 className="restaurantTitle">Popular restaurant types near me</h2>
+        <h2 className="restaurantTitle">{footer.popularTitle}</h2>
         <div className="cuisines">
           {restaurantTypes.map((restaurants) => (
             <>
@@ -34,13 +35,13 @@ function Explore() {
             </>
           ))}
         </div>
-        <h2 className="restaurantTitle">Top Restaurant Chains</h2>
+        <h2 className="restaurantTitle">{footer.chainTitle}</h2>
         <div className="restaurant">
           {restaurant.map((restaurants) => (
             <p className="restaurantName">{restaurants.name}</p>
           ))}
         </div>
-        <h2 className="restaurantTitle">Cities We Deliver To</h2>
+        <h2 className="restaurantTitle">{footer.citiesTitle}</h2>
         <div className="restaurant">
           {cities.map((city) => (
             <p className="restaurantName">{city}</p>

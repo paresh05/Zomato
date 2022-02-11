@@ -5,6 +5,7 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { logo, appleStore, googleStore } from '../../constants/images';
+import { footer } from '../../constants/data';
 
 /**
  * This component creates the main footer component of Zomato
@@ -79,9 +80,7 @@ function Footer() {
       </Grid>
       <hr className="solid" />
       <p className="footerTerms">
-        By continuing past this page, you agree to our Terms of Service, Cookie Policy,
-        Privacy Policy and Content Policies. All trademarks are properties of their
-        respective owners. 2008-2022 © Zomato™ Ltd. All rights reserved.
+        {footer.terms}
       </p>
     </div>
   );

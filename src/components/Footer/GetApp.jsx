@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { getApp, appleStore, googleStore } from '../../constants/images';
+import { footer } from '../../constants/data';
 
 /**
  * This component creates the component for getting the mobile application of Zomato
@@ -24,9 +25,9 @@ function GetApp() {
         className="getAppImage"
       />
       <div className="appContent">
-        <h2 className="appTitle">Get the Zomato App</h2>
+        <h2 className="appTitle">{footer.getAppTitle}</h2>
         <p>
-          We will send you a link, open it on your phone to download the app
+          {footer.getAppsubTitle}
         </p>
         <FormControl>
           <RadioGroup

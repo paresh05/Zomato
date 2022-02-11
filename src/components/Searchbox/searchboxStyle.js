@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     alignItems: 'center',
     mt: '10px',
+    border: '1px solid rgb(232, 232, 232)',
   },
   location: {
     flex: 2,

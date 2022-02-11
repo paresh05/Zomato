@@ -4,6 +4,7 @@ import './header.css';
 import SearchBox from '../Searchbox/SearchBox';
 import Topbar from '../Topbar/Topbar';
 import { zomatoLogo } from '../../constants/images';
+import { zomatotitle } from '../../constants/data';
 
 /**
  * This component creates the header component of the website
@@ -21,7 +22,7 @@ function Header() {
         alt="logo"
       />
       <h1 className="title">
-        Discover the best food & drinks in
+        { zomatotitle.title }
         {` ${city}`}
       </h1>
       <SearchBox />

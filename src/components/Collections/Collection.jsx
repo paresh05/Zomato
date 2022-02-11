@@ -5,8 +5,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Grid } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import collectionApi from '../../service/loginApi';
+import collectionApi from '../../service/zomatoApi';
 import useStyles from './collectionStyles';
+import { collectionTitle } from '../../constants/data';
 
 /**
  * This component creates the collections on the dashboard page
@@ -57,9 +58,9 @@ export default function Collection() {
           component="div"
           paddingLeft={{ md: 15, xs: 2 }}
         >
-          Explore curated lists of top restaurants, cafes, pubs, and bars in
+          {collectionTitle.title}
           {` ${city}`}
-          , based on trends
+          {collectionTitle.subtitle}
         </Typography>
         <Typography
           fontFamily={"'Quicksand', sans-serif"}

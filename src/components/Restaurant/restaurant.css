@@ -1,0 +1,90 @@
+.restaurants {
+  position: relative;
+  max-width: 110rem;
+  max-height: initial;
+  margin: 0px auto;
+  padding: 40px 100px 40px 100px;
+}
+.restauranttitle {
+  color: rgb(28, 28, 28);
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0px 0px 3.2rem;
+  font-family: "Quicksand", sans-serif;
+}
+.hotels {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.rating {
+  display: flex;
+  -webkit-box-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: rgb(36, 150, 63);
+  color: rgb(255, 255, 255);
+  height: 1.5rem;
+  min-width: 2.4rem;
+  padding: 0px 0.4rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgb(36, 150, 63);
+}
+.hotelName {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(105, 105, 105);
+  max-width: 56%;
+  padding: 0px 0px 0.4rem;
+}
+.price {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(105, 105, 105);
+  max-width: 30%;
+  padding: 0px 0px 0.4rem;
+}
+.divider {
+  height: 0.1rem;
+  background-color: rgb(232, 232, 232);
+  margin-bottom: 0.5rem;
+  margin-top: 0.6rem;
+}
+.safeLogo {
+  width: 37px;
+  height: 18px;
+}
+.safeTitle {
+  margin: 0px 0px 0px 1rem;
+  text-align: left;
+  color: rgb(130, 130, 130);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.7rem;
+}
+.orderlogo {
+  width: 18px;
+  height: 18px;
+}

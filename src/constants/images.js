@@ -1,3 +1,7 @@
+/**
+  * This file containes the url of the images used in the application
+  */
+
 export const zomatoLogo = {
   url: 'https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png',
 };
@@ -12,4 +16,10 @@ export const googleStore = {
 };
 export const getApp = {
   url: 'https://b.zmtcdn.com/data/pro/5722d9e687511d79616bcab92470734e1596187147.png',
+};
+export const safeLogo = {
+  url: 'https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png',
+};
+export const ordersLogo = {
+  url: 'https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png',
 };

@@ -7,11 +7,13 @@ import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import {
-  Box, Divider, Grid, InputBase,
+  Box, Divider, Grid, IconButton, InputAdornment, InputBase,
 } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import GoogleIcon from '@mui/icons-material/Google';
 import CloseIcon from '@mui/icons-material/Close';
-import userConnect from '../../service/loginApi';
+import userConnect from '../../service/zomatoApi';
 import useStyles from './LoginStyle';
 
 /**
@@ -24,6 +26,7 @@ function SignUp(props) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [name, setName] = React.useState('');
+  const [showPassword, setShowPassword] = React.useState(false);
   const { onClose, onOpen, signUp } = props;
   const handleClose = () => {
     onClose();
@@ -41,6 +44,9 @@ function SignUp(props) {
   const handleName = (event) => {
     setName(event.target.value);
   };
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   const onSubmit = () => {
     const data = {
       username: name,
@@ -51,6 +57,8 @@ function SignUp(props) {
       .register(data)
       .then((response) => {
         console.log(response.data);
+        onClose();
+        window.location.reload(false);
       })
       .catch((e) => {
         console.log(e);
@@ -92,10 +100,22 @@ function SignUp(props) {
         className={classes.password}
       >
         <InputBase
+          fullWidth
+          type={showPassword ? 'text' : 'password'}
           sx={{ paddingLeft: '10px', fontFamily: 'Quicksand, sans-serif' }}
           placeholder="Password"
           inputProps={{ 'aria-label': 'password' }}
           onChange={handlePassword}
+          endAdornment={(
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          )}
         />
       </Box>
       <Grid
