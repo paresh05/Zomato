@@ -1,9 +1,20 @@
-.restaurants {
-  position: relative;
-  max-width: 110rem;
-  max-height: initial;
-  margin: 0px auto;
-  padding: 40px 100px 40px 100px;
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .restaurants {
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 40px 10px 40px 10px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .restaurants {
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 40px 100px 40px 100px;
+  }
 }
 .restauranttitle {
   color: rgb(28, 28, 28);
@@ -75,13 +86,13 @@
   height: 18px;
 }
 .safeTitle {
-  margin: 0px 0px 0px 1rem;
+  margin: 0px 0px 0px 10px;
   text-align: left;
   color: rgb(130, 130, 130);
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.7rem;
 }
 .orderlogo {

@@ -11,7 +11,7 @@ import {
   MenuItem,
   Select,
 } from '@mui/material';
-import fetchLocation from '../../actions/cardAction';
+import { fetchLocation } from '../../actions/cardAction';
 import useStyles from './searchboxStyle';
 
 /**

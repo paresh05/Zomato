@@ -1,19 +1,30 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .headerSearchbox{
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .headerSearchbox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 .header {
   width: 100%;
   max-width: 100%;
-  display: block;
+  display: flex;
   position: static;
   height: 5.2rem;
   -webkit-box-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
   -webkit-box-align: center;
   align-items: center;
   top: 0px;
   background-color: transparent;
 }
 .navBarfood {
-  width: 100%;
-  max-width: 70rem;
+  width: 70rem;
   display: flex;
   flex-wrap: nowrap;
   height: 100%;
@@ -23,13 +34,13 @@
   align-items: center;
   position: relative;
   z-index: 4;
-  padding-left: 100px;
 }
 .imageLogo {
   max-width: 10rem;
   height: 1.7rem;
   display: block;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .headerList {
@@ -45,6 +56,7 @@
   cursor: pointer;
   color: black;
   text-decoration: none;
+  flex-wrap: nowrap;
 }
 .headerListLogin {
   margin-right: 5px;

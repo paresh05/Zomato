@@ -3,5 +3,8 @@
   */
 const ActionTypes = {
   LOCATION: 'LOCATION',
+  ADDTOCART: 'ADDTOCART',
+  SUBTOTAL: 'SUBTOTAL',
+  HOTELNAME: 'HOTELNAME',
 };
 export default ActionTypes;

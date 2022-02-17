@@ -2,6 +2,7 @@ import {
   Card, CardContent, CardMedia, Grid, Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import './restaurant.css';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import restaurantApi from '../../service/zomatoApi';
@@ -15,6 +16,8 @@ import { restaurantData } from '../../constants/data';
 
 function Restaurant() {
   const [restaurant, setRestaurant] = useState([]);
+  const [redirect, setRedirect] = React.useState(false);
+  const [hotelId, sethotelId] = React.useState(0);
   const fetchRestaurant = () => {
     restaurantApi
       .getRestaurant()
@@ -25,6 +28,10 @@ function Restaurant() {
         console.log(e);
       });
   };
+  const handleRedirect = (id) => {
+    sethotelId(id);
+    setRedirect(true);
+  };
   React.useEffect(() => {
     fetchRestaurant();
   }, []);
@@ -34,7 +41,7 @@ function Restaurant() {
       <div className="hotels">
         <Grid container spacing={5}>
           {restaurant.map((hotel) => (
-            <Grid item>
+            <Grid key={hotel.id} item>
               <Card
                 elevation={4}
                 sx={{
@@ -43,6 +50,7 @@ function Restaurant() {
                   cursor: 'pointer',
                   borderRadius: '20px',
                 }}
+                onClick={() => handleRedirect(hotel.id)}
               >
                 <CardMedia
                   component="img"
@@ -94,6 +102,7 @@ function Restaurant() {
               </Card>
             </Grid>
           ))}
+          {redirect ? <Redirect to={{ pathname: '/delivery/order', search: `?id=${hotelId}` }} /> : null}
         </Grid>
       </div>
     </div>

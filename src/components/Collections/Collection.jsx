@@ -19,12 +19,10 @@ export default function Collection() {
   const [hover, setHover] = React.useState(false);
   const city = useSelector((state) => state.city.location);
   const [collections, setCollections] = React.useState([]);
-  const filteredCollection = collections.filter(
-    (card) => card.attributes.location === city || card.attributes.location === 'all',
-  );
+
   const fetchCollections = () => {
     collectionApi
-      .getCollections()
+      .getCollections(city)
       .then((response) => {
         setCollections(response.data);
       })
@@ -34,7 +32,7 @@ export default function Collection() {
   };
   React.useEffect(() => {
     fetchCollections();
-  }, []);
+  }, [city]);
   return (
     <Grid paddingTop={5} paddingBottom={{ xs: 5, sm: 10, md: 15 }}>
       <Typography
@@ -93,7 +91,7 @@ export default function Collection() {
         align="center"
         className={classes.cards}
       >
-        {filteredCollection.map((collection) => (
+        {collections.map((collection) => (
           <Grid item align="center">
             <Card
               variant="outlined"

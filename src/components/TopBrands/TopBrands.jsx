@@ -1,5 +1,5 @@
 import {
-  Card, CardContent, CardMedia, Typography,
+  Card, CardContent, CardMedia, Grid, Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
 import './topbrands.css';
@@ -30,34 +30,38 @@ function TopBrands() {
     <div className="brands">
       <h3 className="brandTitle">{ foodTitle.brandTitle }</h3>
       <div className="brand">
-        {brands.map((brand) => (
-          <Card
-            elevation={0}
-            sx={{
-              width: 150,
-              height: 200,
-              cursor: 'pointer',
-            }}
-          >
-            <CardMedia
-              component="img"
-              height="150"
-              image={brand.attributes.image}
-              alt="images"
-              sx={{ borderRadius: '50%' }}
-            />
-            <CardContent>
-              <Typography
-                fontFamily={'\'Quicksand\', sans-serif'}
-                fontWeight={600}
-                variant="h6"
-                fontSize={{ lg: 20, sm: 16, xs: 14 }}
+        <Grid container spacing={5}>
+          {brands.map((brand) => (
+            <Grid key={brand.id} item>
+              <Card
+                elevation={0}
+                sx={{
+                  width: 150,
+                  height: 200,
+                  cursor: 'pointer',
+                }}
               >
-                {brand.attributes.name}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
+                <CardMedia
+                  component="img"
+                  height="150"
+                  image={brand.attributes.image}
+                  alt="images"
+                  sx={{ borderRadius: '50%' }}
+                />
+                <CardContent>
+                  <Typography
+                    fontFamily={'\'Quicksand\', sans-serif'}
+                    fontWeight={600}
+                    variant="h6"
+                    fontSize={{ lg: 20, sm: 16, xs: 14 }}
+                  >
+                    {brand.attributes.name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </div>
   );

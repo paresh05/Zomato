@@ -10,11 +10,29 @@
   font-size: 2rem;
   line-height: 1.2;
   font-weight: 600;
-  margin: 0px 0px 3.2rem;
+  margin: 0px 0px 25px;
   font-family: "Quicksand", sans-serif;
 }
 .brand {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .brands {
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 40px 10px 40px 10px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .brands {
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 25px 100px 15px 100px;
+  }
 }

@@ -45,7 +45,9 @@ function DeliveryHeader() {
           src={logo.url}
           alt="logo"
         />
-        <SearchBox />
+        <div className="headerSearchbox">
+          <SearchBox />
+        </div>
         <nav>
           <ul className="headerList">
             {token ? (
@@ -67,26 +69,15 @@ function DeliveryHeader() {
                 )}
               </li>
             ) : (
-              <>
-                <li>
-                  <a
-                    className="headerListItem"
-                    href="#login"
-                    onClick={handleLoginOpen}
-                  >
-                    Log in
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="headerListItem"
-                    href="#signup"
-                    onClick={handlesignUpOpen}
-                  >
-                    Sign up
-                  </a>
-                </li>
-              </>
+              <li>
+                <a
+                  className="headerListItem"
+                  href="#login"
+                  onClick={handleLoginOpen}
+                >
+                  Log in
+                </a>
+              </li>
             )}
           </ul>
           {popover ? (

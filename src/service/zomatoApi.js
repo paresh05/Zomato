@@ -5,6 +5,8 @@
 
 import axiosPost from '../helper/axios';
 
+const qs = require('qs');
+
 // Function to enable the user to login
 const login = (data) => {
   const reqObj = {
@@ -56,9 +58,18 @@ const getCards = () => {
 };
 
 // Function to get all the collections for the location
-const getCollections = () => {
+const getCollections = (city) => {
+  const query = qs.stringify({
+    filters: {
+      location: {
+        $eq: ['all', city],
+      },
+    },
+  }, {
+    encodeValuesOnly: true,
+  });
   const reqObj = {
-    url: '/api/collections',
+    url: `/api/collections?${query}`,
     headers: {
       'Content-type': 'application/json',
     },
@@ -135,6 +146,129 @@ const getRestaurant = () => {
     });
 };
 
+// Function to get the restaurants by id for the location
+const getRestaurantbyId = (id) => {
+  const reqObj = {
+    url: `/api/restaurants/${id}`,
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+  return axiosPost
+    .apiGet(reqObj)
+    .then((response) => response.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const postToCart = (data) => {
+  const reqObj = {
+    data,
+    url: '/api/carts',
+    headers: {
+      Authorization: `bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  return axiosPost
+    .apiPost(reqObj)
+    .then((response) => response)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const getCart = () => {
+  const reqObj = {
+    url: '/api/carts',
+    headers: {
+      Authorization: `bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  return axiosPost
+    .apiGet(reqObj)
+    .then((response) => response.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const updateCart = (data, id) => {
+  const reqObj = {
+    data,
+    url: `/api/carts/${id}`,
+    headers: {
+      Authorization: `bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  return axiosPost
+    .apiUpdate(reqObj)
+    .then((response) => response.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const deleteCart = (id) => {
+  const reqObj = {
+    url: `/api/carts/${id}`,
+    headers: {
+      Authorization: `bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  return axiosPost
+    .apiDelete(reqObj)
+    .then((response) => response.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const postToOrder = (data) => {
+  const reqObj = {
+    data,
+    url: '/api/orders',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+  return axiosPost
+    .apiPost(reqObj)
+    .then((response) => response)
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const getOrder = () => {
+  const reqObj = {
+    url: '/api/orders',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+  return axiosPost
+    .apiGet(reqObj)
+    .then((response) => response.data)
+    .catch((err) => {
+      throw err;
+    });
+};
+
 export default {
-  login, register, getCards, getCollections, getFoodItems, getLocalities, getBrands, getRestaurant,
+  login,
+  register,
+  getCards,
+  getCollections,
+  getFoodItems,
+  getLocalities,
+  getBrands,
+  getRestaurant,
+  getRestaurantbyId,
+  postToCart,
+  getCart,
+  updateCart,
+  deleteCart,
+  postToOrder,
+  getOrder,
 };

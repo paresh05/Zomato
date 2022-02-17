@@ -1,3 +1,6 @@
+/**
+  * This file containes the key and value pair of titles of the website
+  */
 export const zomatotitle = {
   title: 'Discover the best food & drinks in',
 };

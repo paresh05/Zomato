@@ -4,9 +4,22 @@
 
 import ActionTypes from '../constants/actionTypes';
 
-const fetchLocation = (city) => ({
+export const fetchLocation = (city) => ({
   type: ActionTypes.LOCATION,
   payload: city,
 });
 
-export default fetchLocation;
+export const fetchCart = (cart) => ({
+  type: ActionTypes.ADDTOCART,
+  payload: cart,
+});
+
+export const fetchTotal = (price) => ({
+  type: ActionTypes.SUBTOTAL,
+  payload: price,
+});
+
+export const fetchHotelName = (name) => ({
+  type: ActionTypes.HOTELNAME,
+  payload: name,
+});

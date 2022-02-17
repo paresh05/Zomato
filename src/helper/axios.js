@@ -25,4 +25,23 @@ const apiGet = (requestObject) => axios({
   headers: requestObject.headers,
 });
 
-export default { apiPost, apiGet };
+const apiDelete = (requestObject) => axios({
+  method: 'delete',
+  url: requestObject.url,
+  data: requestObject.data,
+  headers: requestObject.headers,
+});
+
+const apiUpdate = (requestObject) => axios({
+  method: 'put',
+  url: requestObject.url,
+  data: requestObject.data,
+  headers: requestObject.headers,
+});
+
+export default {
+  apiPost,
+  apiGet,
+  apiDelete,
+  apiUpdate,
+};

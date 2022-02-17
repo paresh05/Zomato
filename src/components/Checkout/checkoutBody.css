@@ -1,0 +1,395 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .userDetailsBox {
+    box-shadow: none;
+    padding: 12px 24px;
+    width: 100%;
+    border: 0.1rem solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .deliveryAddress {
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 16px;
+    width: 100%;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    padding: 20px 20px 50px 20px;
+  }
+  .summary {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 100%;
+    padding: 0px 0px 20px 30px;
+  }
+  .checkoutTitle {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 20px 0px 25px;
+    font-weight: 600;
+    color: rgb(54, 54, 54);
+    font-family: "Quicksand", sans-serif;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .userDetailsBox {
+    box-shadow: none;
+    padding: 12px 24px;
+    width: 532px;
+    border: 0.1rem solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    margin-left: 50px;
+  }
+  .deliveryAddress {
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 16px;
+    width: 540px;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    padding: 20px 20px 50px 20px;
+    margin-left: 50px;
+  }
+  .summary {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 50%;
+    padding: 0px 0px 20px 30px;
+    margin-left: 50px;
+  }
+  .checkoutTitle {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 20px 50px 25px;
+    font-weight: 600;
+    color: rgb(54, 54, 54);
+    font-family: "Quicksand", sans-serif;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  .userDetailsBox {
+    box-shadow: none;
+    padding: 12px 24px;
+    width: 532px;
+    border: 0.1rem solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .deliveryAddress {
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 16px;
+    width: 540px;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    padding: 20px 20px 50px 20px;
+  }
+  .summary {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 33.3333%;
+    padding: 0px 0px 20px 30px;
+  }
+  .checkoutTitle {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 20px 0px 25px;
+    font-weight: 600;
+    color: rgb(54, 54, 54);
+    font-family: "Quicksand", sans-serif;
+  }
+}
+.checkoutBody {
+  position: relative;
+  max-width: 950px;
+  max-height: initial;
+  margin: 0px auto;
+  padding-bottom: 3.5rem;
+}
+.checkout {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userName {
+  line-height: 1.5;
+  margin: 0px 0px 0.5rem;
+  color: rgb(54, 54, 54);
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+.userEmail {
+  font-size: 18px;
+  padding-left: 0.5rem;
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+.secureLogin {
+  line-height: 1.5;
+  margin: 0px 0px 1rem;
+  font-size: 14px;
+  color: rgb(156, 156, 156);
+}
+
+.deliveryAddressTitle {
+  padding-left: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: default;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  color: rgb(28, 28, 28);
+}
+.cash {
+  padding-left: 1.2rem;
+  color: rgb(54, 54, 54);
+  font-size: 20px;
+  font-weight: 600;
+}
+.paymentText {
+  padding-left: 1.2rem;
+  font-size: 14px;
+  color: rgb(156, 156, 156);
+}
+
+.summaryTitle {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: rgb(79, 79, 79);
+}
+.summaryBody {
+  border: 1px solid rgb(248, 248, 248);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.orderFrom {
+  padding: 15px;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  background: rgb(248, 248, 248);
+}
+.orderFromTitle {
+  line-height: 1.5;
+  margin: 0px 0px 8px;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgb(79, 79, 79);
+  font-weight: 600;
+}
+.orderHotelTitle {
+  font-size: inherit;
+  line-height: 1.5;
+  margin: 0px;
+  font-weight: 500;
+  color: rgb(54, 54, 54);
+}
+.orderedLocation {
+  line-height: 1.5;
+  margin: 0px;
+  font-size: 12px;
+  color: rgb(54, 54, 54);
+}
+.orderedItem {
+  padding: 15px;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  background: rgb(255, 255, 255);
+}
+.orderItem {
+  display: flex;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.orderItemName {
+  line-height: 1.5;
+  margin: 0px 0px 2.5px;
+  font-weight: 500;
+  color: rgb(54, 54, 54);
+  font-size: 14px;
+  padding-right: 5px;
+}
+.orderItemPrice {
+  line-height: 1.5;
+  margin: 4px 5px 0px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(54, 54, 54);
+  text-align: right;
+}
+.instructions {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+.instruction {
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(105, 105, 105);
+  border-bottom: 1px dashed rgb(130, 130, 130);
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  text-align: center;
+}
+.supportTitle {
+  line-height: 1.5;
+  margin: 0px;
+  font-size: 16px;
+  color: rgb(130, 130, 130);
+}
+.supportText {
+  line-height: 1.5;
+  margin: 0px;
+  font-size: 12px;
+  padding: 10px 0px;
+  color: rgb(130, 130, 130);
+}
+.supportPrice {
+  display: flex;
+}
+.supportPrices {
+  border-radius: 6px;
+  margin-right: 8px;
+}
+.supportPricesinRs {
+  line-height: 1.5;
+  margin: 0px;
+  color: rgb(54, 54, 54);
+  font-size: 14px;
+  width: 45px;
+  height: 25px;
+  background: white;
+  text-align: center;
+  border: 1px solid rgb(232, 232, 232);
+  box-sizing: border-box;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.totalPrice {
+  padding: 15px;
+  background: rgb(254, 252, 249);
+}
+.subTotal {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+.subTotalTitle {
+  line-height: 1.5;
+  margin: 0px;
+  color: rgb(79, 79, 79);
+  font-weight: 500;
+  font-size: 14px;
+}
+.subtotalPrice {
+  font-size: 14px;
+  color: rgb(28, 28, 28);
+}
+.tax {
+  display: flex;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.taxTitle {
+  font-size: 14px;
+  width: 75%;
+  text-decoration: underline dashed;
+  color: rgb(130, 130, 130);
+}
+.taxPrice {
+  line-height: 1.5;
+  margin: 0px;
+  font-size: 14px;
+  color: rgb(130, 130, 130);
+  white-space: nowrap;
+}
+.summaryDivider {
+  margin-top: 5px;
+  height: 0px;
+  border-width: 0.5px 0px 0px;
+  border-right-style: initial;
+  border-bottom-style: initial;
+  border-left-style: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  border-image: initial;
+  border-top-style: solid;
+  border-top-color: rgb(232, 232, 232);
+}
+.grandTotal {
+  display: flex;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 15px;
+}
+.grandTotalTitle {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0px;
+  color: rgb(54, 54, 54);
+  font-weight: 600;
+}
+.grandTotalPrice {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(28, 28, 28);
+}
+.placeOrderButton {
+  width: 100%;
+  position: sticky;
+  bottom: 0px;
+}
+.boxDelivery {
+  height: "48px";
+  background-color: "white";
+  border-radius: "0.5rem";
+  display: "flex";
+  align-items: "center";
+  border: "1px solid rgb(207, 207, 207)";
+  margin: "10px 24px 5px 24px";
+  width: "400px";
+}

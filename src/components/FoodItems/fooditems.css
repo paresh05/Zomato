@@ -1,21 +1,35 @@
-.items {
-  background: rgb(248, 248, 248);
-  position: relative;
-  max-width: 110rem;
-  max-height: initial;
-  margin: 0px auto;
-  padding: 40px 100px 40px 100px ;
-}
 .itemsTitle {
   color: rgb(28, 28, 28);
   font-size: 2rem;
   line-height: 1.2;
   font-weight: 600;
-  margin: 0px 0px 3.2rem;
+  margin: 0px 0px 25px;
   font-family: "Quicksand", sans-serif;
 }
 .item {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .items {
+    background: rgb(248, 248, 248);
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 25px 10px 15px 10px;
+    margin-top: 5px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .items {
+    background: rgb(248, 248, 248);
+    position: relative;
+    max-width: 110rem;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 25px 100px 15px 100px;
+    margin-top: 25px;
+  }
 }
