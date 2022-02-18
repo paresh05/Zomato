@@ -7,8 +7,8 @@ import foodApi from '../../service/zomatoApi';
 import { foodTitle } from '../../constants/data';
 
 /**
- * This component creates the header component of the website
- * @returns a header component with searchbox, topbar and background image
+ * This component creates the food items component of the delivery page
+ * @returns a card component with food items
  */
 
 function FoodItems() {

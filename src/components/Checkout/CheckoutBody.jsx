@@ -5,8 +5,8 @@ import Summary from './Summary';
 import useStyles from './checkoutBodyStyles';
 
 /**
- * This component creates the header component of the order delivery page
- * @returns a header component with searchbox, logo and account
+ * This component creates the checkout component of the checkout page
+ * @returns a card components with delivery address component, user information and payment methods
  */
 
 function CheckoutBody() {
@@ -48,7 +48,7 @@ function CheckoutBody() {
             <p className="userName">
               {name}
               <span className="userEmail">
-                pareshpraveen05@gmail.com
+                paresh@gmail.com
               </span>
             </p>
             <p className="secureLogin">You have securely logged in</p>

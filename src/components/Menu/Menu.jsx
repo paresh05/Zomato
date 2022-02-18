@@ -8,8 +8,8 @@ import Login from '../Login/Login';
 import SignUp from '../Login/SignUp';
 
 /**
- * This component creates the header component of the website
- * @returns a header component with searchbox, topbar and background image
+ * This component creates the menu component of the website
+ * @returns a component with dish details and price
  */
 
 function Menu(props) {

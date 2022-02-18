@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './restaurantDetails.css';
 
 /**
- * This component creates the header component of the website
- * @returns a header component with searchbox, topbar and background image
+ * This component creates the image list component of the website
+ * @returns a iamge component of respective hotels
  */
 
 function ImageList(props) {

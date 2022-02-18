@@ -161,7 +161,7 @@ const getRestaurantbyId = (id) => {
       throw err;
     });
 };
-
+// Function to add items to cart
 const postToCart = (data) => {
   const reqObj = {
     data,
@@ -177,7 +177,7 @@ const postToCart = (data) => {
       throw err;
     });
 };
-
+// Function to get all the items from cart
 const getCart = () => {
   const reqObj = {
     url: '/api/carts',
@@ -193,6 +193,7 @@ const getCart = () => {
     });
 };
 
+// Function to update the cart items
 const updateCart = (data, id) => {
   const reqObj = {
     data,
@@ -209,6 +210,7 @@ const updateCart = (data, id) => {
     });
 };
 
+// Function to delete the items from the cart
 const deleteCart = (id) => {
   const reqObj = {
     url: `/api/carts/${id}`,
@@ -224,6 +226,7 @@ const deleteCart = (id) => {
     });
 };
 
+// Function to add the items to order list
 const postToOrder = (data) => {
   const reqObj = {
     data,
@@ -240,6 +243,7 @@ const postToOrder = (data) => {
     });
 };
 
+// Function to get all the order items 
 const getOrder = () => {
   const reqObj = {
     url: '/api/orders',

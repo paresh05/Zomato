@@ -8,8 +8,8 @@ import ImageList from './ImageList';
 import { fetchHotelName } from '../../actions/cardAction';
 
 /**
- * This component creates the header component of the website
- * @returns a header component with searchbox, topbar and background image
+ * This component creates the restaurant details component of the website
+ * @returns a card component with restaurant details
  */
 
 function RestaurantDetails() {

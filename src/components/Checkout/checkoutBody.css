@@ -23,7 +23,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     max-width: 100%;
-    padding: 0px 0px 20px 30px;
+    padding: 0px 10px 20px 10px;
   }
   .checkoutTitle {
     font-size: 40px;

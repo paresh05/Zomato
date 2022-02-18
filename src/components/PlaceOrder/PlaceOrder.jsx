@@ -4,8 +4,8 @@ import './placeOrder.css';
 import cartApi from '../../service/zomatoApi';
 
 /**
- * This component creates the header component of the order delivery page
- * @returns a header component with searchbox, logo and account
+ * This component creates the oder placed component of the website
+ * @returns a component with order summary
  */
 
 function PlaceOrder() {

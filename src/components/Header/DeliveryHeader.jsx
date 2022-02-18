@@ -71,11 +71,11 @@ function DeliveryHeader() {
             ) : (
               <li>
                 <a
-                  className="headerListItem"
+                  className="headerListItemLogin"
                   href="#login"
                   onClick={handleLoginOpen}
                 >
-                  Log in
+                  Login
                 </a>
               </li>
             )}
