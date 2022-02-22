@@ -243,7 +243,7 @@ const postToOrder = (data) => {
     });
 };
 
-// Function to get all the order items 
+// Function to get all the order items
 const getOrder = () => {
   const reqObj = {
     url: '/api/orders',
