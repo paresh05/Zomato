@@ -1,13 +1,44 @@
 @media screen and (min-width: 0px) and (max-width: 600px) {
   .restaurants {
     position: relative;
+    max-height: initial;
+    margin: 0px auto;
+    padding: 40px 0px 40px 0px;
+  }
+  .restauranttitle {
+    color: rgb(28, 28, 28);
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0px 0px 32px;
+    font-family: "Quicksand", sans-serif;
+  }
+  .hotels {
+    padding-left: 0%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .restaurants {
+    position: relative;
     max-width: 110rem;
     max-height: initial;
     margin: 0px auto;
-    padding: 40px 10px 40px 10px;
+    padding: 40px 50px 40px 50px;
+  }
+  .restauranttitle {
+    color: rgb(28, 28, 28);
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0px 0px 3.2rem;
+    font-family: "Quicksand", sans-serif;
+  }
+  .hotels {
+    padding-left: 0%;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 1500px) {
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
   .restaurants {
     position: relative;
     max-width: 110rem;
@@ -15,19 +46,17 @@
     margin: 0px auto;
     padding: 40px 100px 40px 100px;
   }
-}
-.restauranttitle {
-  color: rgb(28, 28, 28);
-  font-size: 2rem;
-  line-height: 1.2;
-  font-weight: 600;
-  margin: 0px 0px 3.2rem;
-  font-family: "Quicksand", sans-serif;
-}
-.hotels {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
+  .restauranttitle {
+    color: rgb(28, 28, 28);
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0px 0px 3.2rem;
+    font-family: "Quicksand", sans-serif;
+  }
+  .hotels {
+    padding-left: 0%;
+  }
 }
 .rating {
   display: flex;
@@ -93,7 +122,7 @@
   text-overflow: ellipsis;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.7rem;
+  line-height: 15px;
 }
 .orderlogo {
   width: 18px;

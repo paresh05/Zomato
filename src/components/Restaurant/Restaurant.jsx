@@ -3,6 +3,7 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './restaurant.css';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import restaurantApi from '../../service/zomatoApi';
@@ -16,11 +17,16 @@ import { restaurantData } from '../../constants/data';
 
 function Restaurant() {
   const [restaurant, setRestaurant] = useState([]);
+  const city = useSelector((state) => state.city.location);
+  const food = useSelector((state) => state.city.foodItem);
   const [redirect, setRedirect] = React.useState(false);
   const [hotelId, sethotelId] = React.useState(0);
+  const filteredRestaurants = restaurant.filter(
+    (hotel) => hotel.attributes.description.includes(food),
+  );
   const fetchRestaurant = () => {
     restaurantApi
-      .getRestaurant()
+      .getRestaurant(city)
       .then((response) => {
         setRestaurant(response.data);
       })
@@ -34,18 +40,28 @@ function Restaurant() {
   };
   React.useEffect(() => {
     fetchRestaurant();
-  }, []);
+  }, [city]);
   return (
     <div className="restaurants">
-      <h3 className="restauranttitle">{restaurantData.title}</h3>
+      <h3 className="restauranttitle">
+        {restaurantData.title}
+        {city}
+      </h3>
       <div className="hotels">
-        <Grid container spacing={5}>
-          {restaurant.map((hotel) => (
+        <Grid
+          container
+          spacing={5}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          {filteredRestaurants.map((hotel) => (
             <Grid key={hotel.id} item>
               <Card
                 elevation={4}
                 sx={{
-                  width: 350,
+                  width: { lg: 350, sm: 310, xs: 300 },
                   height: 379,
                   cursor: 'pointer',
                   borderRadius: '20px',

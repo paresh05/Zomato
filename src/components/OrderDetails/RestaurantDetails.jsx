@@ -17,8 +17,6 @@ function RestaurantDetails() {
   const id = queryParams.get('id');
   const dispatch = useDispatch();
   const [restaurant, setRestaurant] = React.useState({});
-  if (restaurant) console.log(restaurant);
-  if (Object.keys(restaurant).length !== 0) console.log('hello');
   const fetchRestaurant = () => {
     restaurantApi
       .getRestaurantbyId(id)

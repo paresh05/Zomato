@@ -99,10 +99,10 @@ function Cart() {
                     sx={{ transform: `${rotate}`, transition: 'all 0.25s linear' }}
                   />
                 </span>
-                <span className="yourOrderTitle">Your Orders</span>
+                <span id="orderTitle" className="yourOrderTitle">Your Orders</span>
               </div>
               <div>
-                <span className="yourOrderTitle">
+                <span className="yourOrderrTitle">
                   Subtotal: Rs.
                   {total}
                 </span>

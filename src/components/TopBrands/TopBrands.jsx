@@ -30,7 +30,14 @@ function TopBrands() {
     <div className="brands">
       <h3 className="brandTitle">{ foodTitle.brandTitle }</h3>
       <div className="brand">
-        <Grid container spacing={5}>
+        <Grid
+          container
+          spacing={5}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           {brands.map((brand) => (
             <Grid key={brand.id} item>
               <Card

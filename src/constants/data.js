@@ -10,7 +10,7 @@ export const collectionTitle = {
   locationTitle: 'Popular localities in and around',
 };
 export const restaurantData = {
-  title: 'Delivery Restaurants in Bengaluru',
+  title: 'Delivery Restaurants in ',
   protocol: 'Restaurant partner follows WHO protocol',
 };
 export const foodTitle = {

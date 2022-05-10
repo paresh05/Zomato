@@ -16,7 +16,6 @@ export default function Cards() {
   const [hover, setHover] = React.useState(false);
   const [cards, setCards] = React.useState([]);
   const [redirect, setRedirect] = React.useState(false);
-  console.log(redirect);
   const fetchCards = () => {
     cardApi
       .getCards()
@@ -46,6 +45,7 @@ export default function Cards() {
       {cards.map((card) => (
         <Grid item key={card.id} align="center">
           <Card
+            id="orderOnline"
             variant="outlined"
             sx={{
               width: { lg: 267.5, sm: 180, xs: 160 },
@@ -86,7 +86,7 @@ export default function Cards() {
           </Card>
         </Grid>
       ))}
-      {redirect[1] ? <Redirect to="/delivery" /> : null}
+      {redirect[2] ? <Redirect to="/delivery" /> : null}
     </Grid>
   );
 }

@@ -1,7 +1,6 @@
 import './topbar.css';
 import React, { useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Login from '../Login/Login';
 import SignUp from '../Login/SignUp';
 
@@ -12,6 +11,7 @@ import SignUp from '../Login/SignUp';
 
 function Topbar() {
   const [login, setLogin] = useState(false);
+  const [rotate, setRotate] = useState('');
   const [signUp, setSignUp] = useState(false);
   const [popover, setPopover] = useState(false);
   const token = localStorage.getItem('token');
@@ -29,6 +29,8 @@ function Topbar() {
     setSignUp(false);
   };
   const handleClick = () => {
+    if (rotate === '') setRotate('rotate(-180deg)');
+    else setRotate('');
     setPopover(!popover);
   };
   const handleLogout = () => {
@@ -58,22 +60,21 @@ function Topbar() {
               <a className="topListLogin" href="#login">
                 {name}
               </a>
-              {popover ? (
-                <KeyboardArrowUpIcon
-                  onClick={handleClick}
-                  sx={{ color: 'white', cursor: 'pointer' }}
-                />
-              ) : (
-                <KeyboardArrowDownIcon
-                  onClick={handleClick}
-                  sx={{ color: 'white', cursor: 'pointer' }}
-                />
-              )}
+              <KeyboardArrowDownIcon
+                onClick={handleClick}
+                sx={{
+                  color: 'white',
+                  cursor: 'pointer',
+                  transform: `${rotate}`,
+                  transition: 'all 0.2s linear',
+                }}
+              />
             </li>
           ) : (
             <>
               <li>
                 <a
+                  id="login"
                   className="topListItem"
                   href="#login"
                   onClick={handleLoginOpen}

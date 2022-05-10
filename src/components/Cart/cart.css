@@ -1,3 +1,26 @@
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .yourOrderTitle {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1500px) {
+  .yourOrderTitle {
+    margin: 0px 15px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(28, 28, 28);
+    user-select: none;
+  }
+}
+.yourOrderrTitle{
+  margin: 0px 15px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgb(28, 28, 28);
+  user-select: none;
+}
 .footerCart {
   position: fixed;
   z-index: 11;
@@ -36,14 +59,6 @@
   border-radius: 4px;
   cursor: pointer;
   background: rgb(255, 255, 255);
-}
-.yourOrderTitle {
-  margin: 0px 15px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: rgb(28, 28, 28);
-  user-select: none;
 }
 .subCart {
   position: fixed;

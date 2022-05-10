@@ -6,7 +6,7 @@
     padding: 10px 0px;
     font-family: "Quicksand", sans-serif;
   }
-  .review{
+  .review {
     display: none;
   }
   .reviewRating {
@@ -15,6 +15,27 @@
     font-size: inherit;
     cursor: pointer;
     margin-right: 10px;
+  }
+
+  .foodType {
+    color: rgb(105, 105, 105);
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 13px;
+  }
+  .timings {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    align-items: flex-start;
+    transition: opacity 0.2s ease-in-out 0s;
+    padding-left: 10px;
+  }
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
@@ -38,6 +59,27 @@
     cursor: pointer;
     margin-right: 100px;
   }
+
+  .foodType {
+    color: rgb(105, 105, 105);
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 13px;
+  }
+  .timings {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    align-items: flex-start;
+    transition: opacity 0.2s ease-in-out 0s;
+    padding-left: 10px;
+  }
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
 }
 @media screen and (min-width: 1000px) and (max-width: 1500px) {
   .hotelDetails {
@@ -60,12 +102,27 @@
     cursor: pointer;
     margin-right: 100px;
   }
+
+  .foodType {
+    color: rgb(105, 105, 105);
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 3px;
+  }
+  .timings {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    align-items: flex-start;
+    transition: opacity 0.2s ease-in-out 0s;
+  }
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
-.details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .hotelName {
   line-height: 1.2;
   color: rgb(28, 28, 28);
@@ -105,19 +162,6 @@
   padding-bottom: 0.2rem;
   border-bottom: 0.5px dashed rgb(181, 181, 181);
   color: rgb(54, 54, 54);
-}
-.foodType {
-  color: rgb(105, 105, 105);
-  font-size: 16px;
-  padding-left: 3px;
-  line-height: 25px;
-}
-.timings {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  align-items: flex-start;
-  transition: opacity 0.2s ease-in-out 0s;
 }
 .timing {
   display: flex;
@@ -197,6 +241,27 @@
   cursor: pointer;
   margin: 0px;
   overflow: hidden;
+  filter: brightness(0.9);
+  transition: 0.5s;
+}
+.mainImageDiv{
+  width: 686px;
+  height: 370px;
+  position: relative;
+  cursor: pointer;
+  margin: 0px;
+  overflow: hidden;
+}
+.mainImage:hover {
+  width: 686px;
+  height: 370px;
+  position: relative;
+  cursor: pointer;
+  margin: 0px;
+  overflow: hidden;
+  filter: brightness(1.05);
+  transform: scale(1.05);
+  transition: 0.5s;
 }
 .subImages {
   margin-left: 0.4rem;
@@ -204,6 +269,29 @@
   flex-direction: column;
 }
 .subImage {
+  width: 200px;
+  height: 182px;
+  position: relative;
+  cursor: pointer;
+  margin: 0px;
+  overflow: hidden;
+  filter: brightness(0.9);
+  margin: 0px 0px 0.3rem;
+  transition: 0.5s;
+}
+.subImage:hover {
+  width: 200px;
+  height: 182px;
+  position: relative;
+  cursor: pointer;
+  margin: 0px;
+  overflow: hidden;
+  margin: 0px 0px 0.3rem;
+  filter: brightness(1.05);
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.subImageDiv{
   width: 200px;
   height: 182px;
   position: relative;

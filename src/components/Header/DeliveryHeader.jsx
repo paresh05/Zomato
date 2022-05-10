@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { logo } from '../../constants/images';
@@ -13,6 +14,7 @@ import SignUp from '../Login/SignUp';
 
 function DeliveryHeader() {
   const [login, setLogin] = useState(false);
+  const [back, setBack] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [popover, setPopover] = useState(false);
   const token = localStorage.getItem('token');
@@ -32,6 +34,9 @@ function DeliveryHeader() {
   const handleClick = () => {
     setPopover(!popover);
   };
+  const handleBack = () => {
+    setBack(true);
+  };
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('name');
@@ -40,11 +45,18 @@ function DeliveryHeader() {
   return (
     <header className="header">
       <div className="navBarfood">
-        <img
-          className="imageLogo"
-          src={logo.url}
-          alt="logo"
-        />
+        <button
+          id="back"
+          type="button"
+          onClick={handleBack}
+          className="backToHome"
+        >
+          <img
+            className="imageLogo"
+            src={logo.url}
+            alt="logo"
+          />
+        </button>
         <div className="headerSearchbox">
           <SearchBox />
         </div>
@@ -107,6 +119,7 @@ function DeliveryHeader() {
           />
         </nav>
       </div>
+      {back ? <Redirect to="/" /> : null}
     </header>
   );
 }

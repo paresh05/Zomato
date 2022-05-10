@@ -33,7 +33,7 @@ export default function Localities() {
   }, []);
   return (
     <Grid
-      paddingBottom={{ xs: 5, sm: 12, md: 15 }}
+      paddingBottom={{ xs: 5, sm: 8, md: 8 }}
     >
       <Typography
         fontFamily={"'Quicksand', sans-serif"}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { logo } from '../../constants/images';
 import './deliveryHeader.css';
 import './checkoutHeader.css';
@@ -12,6 +13,8 @@ import SignUp from '../Login/SignUp';
 
 function CheckoutHeader() {
   const [login, setLogin] = useState(false);
+  const [back, setBack] = useState(false);
+  const [backToHome, setBackToHome] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const token = localStorage.getItem('token');
   const name = localStorage.getItem('name');
@@ -27,16 +30,35 @@ function CheckoutHeader() {
   const handlesignUpClose = () => {
     setSignUp(false);
   };
+  const handleBack = () => {
+    setBack(true);
+  };
+  const handleBackToHome = () => {
+    setBackToHome(true);
+  };
   return (
     <div>
       <header className="headerCheckout">
         <div className="navBarFood">
-          <p className="backToRestaurant">Back to Restaurant</p>
-          <img
-            className="imageLogo"
-            src={logo.url}
-            alt="logo"
-          />
+          <button
+            id="back"
+            type="button"
+            onClick={handleBack}
+            className="backToRestaurant"
+          >
+            Back to Restaurant
+          </button>
+          <button
+            type="button"
+            className="backToHome"
+            onClick={handleBackToHome}
+          >
+            <img
+              className="imageLogo"
+              src={logo.url}
+              alt="logo"
+            />
+          </button>
           <nav>
             <ul className="headerList">
               {token ? (
@@ -62,6 +84,8 @@ function CheckoutHeader() {
         </div>
       </header>
       <hr className="cartDivider" />
+      {back ? <Redirect to="/delivery" /> : null}
+      {backToHome ? <Redirect to="/" /> : null}
     </div>
   );
 }

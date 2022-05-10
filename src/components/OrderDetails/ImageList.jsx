@@ -12,10 +12,16 @@ function ImageList(props) {
 
   return (
     <div className="imageList">
-      <img className="mainImage" src={subImages[0].url} alt="logo" />
+      <div className="mainImageDiv">
+        <img className="mainImage" src={subImages[0].url} alt="logo" />
+      </div>
       <div className="subImages">
-        <img className="subImage" src={subImages[1].url} alt="logo" />
-        <img className="subImage" src={subImages[2].url} alt="logo" />
+        <div className="subImageDiv">
+          <img className="subImage" src={subImages[1].url} alt="logo" />
+        </div>
+        <div className="subImageDiv">
+          <img className="subImage" src={subImages[2].url} alt="logo" />
+        </div>
       </div>
       <div className="subImages">
         <div className="viewGallery">

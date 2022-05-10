@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     border: '1px solid rgb(207, 207, 207)',
-    margin: '10px 24px 5px 10px',
+    margin: '10px 13px 5px 10px',
   },
   city: {
     width: '45.5%',
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     border: '1px solid rgb(207, 207, 207)',
-    margin: '10px 0px 5px 10px',
+    margin: '10px 11px 5px 10px',
   },
   checkbox: {
     display: 'flex',

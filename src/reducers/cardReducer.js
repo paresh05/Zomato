@@ -5,6 +5,7 @@ import ActionTypes from '../constants/actionTypes';
 
 const initialState = {
   location: 'Bengaluru',
+  foodItem: ' ',
   addToCart: [],
   subTotal: 0,
   hotelName: '',
@@ -15,6 +16,8 @@ const cardReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.LOCATION:
       return { ...state, location: payload };
+    case ActionTypes.FOODITEM:
+      return { ...state, foodItem: payload };
     case ActionTypes.ADDTOCART:
       return { ...state, addToCart: payload };
     case ActionTypes.SUBTOTAL:

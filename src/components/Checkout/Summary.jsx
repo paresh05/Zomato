@@ -28,7 +28,6 @@ function Summary(props) {
       console.log(e);
     }));
   const handleClick = () => {
-    setRedirect(true);
     const data = {
       data: {
         hotelName: name,
@@ -40,8 +39,8 @@ function Summary(props) {
     };
     cartApi
       .postToOrder(data)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        setRedirect(true);
         handleDeleteCart();
       })
       .catch((e) => {
@@ -131,6 +130,7 @@ function Summary(props) {
         </div>
       </div>
       <Button
+        id="placeOrderButton"
         variant="contained"
         onClick={handleClick}
         disabled={!btn}
@@ -144,6 +144,7 @@ function Summary(props) {
           fontSize: '18px',
           borderRadius: '0.6rem',
           cursor: 'pointer',
+          marginTop: '20px',
         }}
       >
         Place Order
@@ -154,15 +155,13 @@ function Summary(props) {
 }
 
 Summary.propTypes = {
-  address: PropTypes.arrayOf(
-    PropTypes.shape({
-      address: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      state: PropTypes.string.isRequired,
-      pinCode: PropTypes.string.isRequired,
-      mobile: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  address: PropTypes.shape({
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    pinCode: PropTypes.string.isRequired,
+    mobile: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Summary;

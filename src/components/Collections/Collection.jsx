@@ -34,7 +34,7 @@ export default function Collection() {
     fetchCollections();
   }, [city]);
   return (
-    <Grid paddingTop={5} paddingBottom={{ xs: 5, sm: 10, md: 15 }}>
+    <Grid paddingTop={5} paddingBottom={{ xs: 5, sm: 8, md: 8 }}>
       <Typography
         fontFamily={"'Quicksand', sans-serif"}
         fontWeight={500}

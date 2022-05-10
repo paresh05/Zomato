@@ -8,4 +8,9 @@ describe('Header Component', () => {
     const wrapper = shallow(<Order />);
     expect(wrapper.containsMatchingElement(<RestaurantDetails />)).toEqual(true);
   });
+  // it('renders header component', () => {
+  //   const wrapper = shallow(<RestaurantDetails />);
+  //   console.log(wrapper.debug());
+  //   // expect(wrapper.containsMatchingElement(<RestaurantDetails />)).toEqual(true);
+  // });
 });

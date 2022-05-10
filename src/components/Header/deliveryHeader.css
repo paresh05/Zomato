@@ -2,13 +2,89 @@
   .headerSearchbox{
     display: none;
   }
+  .imageLogo {
+    max-width: 10rem;
+    height: 1.7rem;
+    padding-left: 10px;
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .navBarfood {
+    width: 70rem;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+  }
 }
-@media screen and (min-width: 600px) and (max-width: 1500px) {
+@media screen and (min-width: 600px) and (max-width: 1000px) {
   .headerSearchbox{
     width: 100%;
     display: flex;
     justify-content: center;
   }
+  .imageLogo {
+    max-width: 10rem;
+    height: 1.7rem;
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .navBarfood {
+    width: 70rem;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    padding: 0px 20px 0px 20px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  .headerSearchbox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .imageLogo {
+    max-width: 10rem;
+    height: 1.7rem;
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .navBarfood {
+    width: 70rem;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+  }
+}
+.backToHome{
+  color: rgb(255, 126, 139);
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
 }
 .header {
   width: 100%;
@@ -22,25 +98,6 @@
   align-items: center;
   top: 0px;
   background-color: transparent;
-}
-.navBarfood {
-  width: 70rem;
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100%;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  position: relative;
-  z-index: 4;
-}
-.imageLogo {
-  max-width: 10rem;
-  height: 1.7rem;
-  display: block;
-  cursor: pointer;
-  margin-right: 10px;
 }
 
 .headerList {

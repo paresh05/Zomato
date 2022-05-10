@@ -2,9 +2,11 @@ import {
   Card, CardContent, CardMedia, Grid, Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './fooditems.css';
 import foodApi from '../../service/zomatoApi';
 import { foodTitle } from '../../constants/data';
+import { fetchFoodItem } from '../../actions/cardAction';
 
 /**
  * This component creates the food items component of the delivery page
@@ -12,6 +14,7 @@ import { foodTitle } from '../../constants/data';
  */
 
 function FoodItems() {
+  const dispatch = useDispatch();
   const [items, setItems] = useState([]);
   const fetchFood = () => {
     foodApi
@@ -23,6 +26,9 @@ function FoodItems() {
         console.log(e);
       });
   };
+  const handleChange = (food) => {
+    dispatch(fetchFoodItem(food));
+  };
   React.useEffect(() => {
     fetchFood();
   }, []);
@@ -30,7 +36,14 @@ function FoodItems() {
     <div className="items">
       <h3 className="itemsTitle">{foodTitle.title}</h3>
       <div className="item">
-        <Grid container spacing={5}>
+        <Grid
+          container
+          spacing={5}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           {items.map((food) => (
             <Grid key={food.id} item>
               <Card
@@ -41,6 +54,7 @@ function FoodItems() {
                   cursor: 'pointer',
                   background: 'rgb(248, 248, 248)',
                 }}
+                onClick={() => { handleChange(food.attributes.foodIems); }}
               >
                 <CardMedia
                   component="img"

@@ -2,11 +2,70 @@
   .backToRestaurant{
     display: none;
  }
+ .navBarFood {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
 }
-@media screen and (min-width: 600px) and (max-width: 1500px) {
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .navBarFood {
+    width: 100%;
+    max-width: 60rem;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    padding: 0px 20px 0px 20px;
+  }
   .backToRestaurant{
     color: rgb(255, 126, 139);
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  .backToRestaurant{
+    color: rgb(255, 126, 139);
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+  }
+ .navBarFood {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+  }
 }
 .headerCheckout {
    width: 100%;
@@ -20,19 +79,6 @@
    align-items: center;
    top: 0px;
    background-color: transparent;
- }
- .navBarFood {
-   width: 100%;
-   max-width: 60rem;
-   display: flex;
-   flex-wrap: nowrap;
-   height: 100%;
-   -webkit-box-pack: justify;
-   justify-content: space-between;
-   -webkit-box-align: center;
-   align-items: center;
-   position: relative;
-   z-index: 4;
  }
  .imageLogo {
    max-width: 10rem;

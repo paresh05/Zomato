@@ -6,5 +6,6 @@ const ActionTypes = {
   ADDTOCART: 'ADDTOCART',
   SUBTOTAL: 'SUBTOTAL',
   HOTELNAME: 'HOTELNAME',
+  FOODITEM: 'FOODITEM',
 };
 export default ActionTypes;

@@ -11,7 +11,7 @@ const qs = require('qs');
 const login = (data) => {
   const reqObj = {
     data,
-    url: '/api/auth/local',
+    url: 'https://zomatostrapi.herokuapp.com/api/auth/local',
     headers: {
       'Content-type': 'application/json',
     },
@@ -28,7 +28,7 @@ const login = (data) => {
 const register = (data) => {
   const reqObj = {
     data,
-    url: '/api/auth/local/register',
+    url: 'https://zomatostrapi.herokuapp.com/api/auth/local/register',
     headers: {
       'Content-type': 'application/json',
     },
@@ -44,7 +44,7 @@ const register = (data) => {
 // Function to get all the cards
 const getCards = () => {
   const reqObj = {
-    url: '/api/cards',
+    url: 'https://zomatostrapi.herokuapp.com/api/cards',
     headers: {
       'Content-type': 'application/json',
     },
@@ -69,7 +69,7 @@ const getCollections = (city) => {
     encodeValuesOnly: true,
   });
   const reqObj = {
-    url: `/api/collections?${query}`,
+    url: `https://zomatostrapi.herokuapp.com/api/collections?${query}`,
     headers: {
       'Content-type': 'application/json',
     },
@@ -85,7 +85,7 @@ const getCollections = (city) => {
 // Function to get all the food items
 const getFoodItems = () => {
   const reqObj = {
-    url: '/api/foods',
+    url: 'https://zomatostrapi.herokuapp.com/api/foods',
     headers: {
       'Content-type': 'application/json',
     },
@@ -101,7 +101,7 @@ const getFoodItems = () => {
 // Function to get all the localities for the location
 const getLocalities = () => {
   const reqObj = {
-    url: '/api/localities',
+    url: 'https://zomatostrapi.herokuapp.com/api/localities',
     headers: {
       'Content-type': 'application/json',
     },
@@ -117,7 +117,7 @@ const getLocalities = () => {
 // Function to get all the top brands
 const getBrands = () => {
   const reqObj = {
-    url: '/api/brands',
+    url: 'https://zomatostrapi.herokuapp.com/api/brands',
     headers: {
       'Content-type': 'application/json',
     },
@@ -131,9 +131,18 @@ const getBrands = () => {
 };
 
 // Function to get all the restaurants for the location
-const getRestaurant = () => {
+const getRestaurant = (city) => {
+  const query = qs.stringify({
+    filters: {
+      location: {
+        $eq: ['all', city],
+      },
+    },
+  }, {
+    encodeValuesOnly: true,
+  });
   const reqObj = {
-    url: '/api/restaurants',
+    url: `https://zomatostrapi.herokuapp.com/api/restaurants?${query}`,
     headers: {
       'Content-type': 'application/json',
     },
@@ -149,7 +158,7 @@ const getRestaurant = () => {
 // Function to get the restaurants by id for the location
 const getRestaurantbyId = (id) => {
   const reqObj = {
-    url: `/api/restaurants/${id}`,
+    url: `https://zomatostrapi.herokuapp.com/api/restaurants/${id}`,
     headers: {
       'Content-type': 'application/json',
     },
@@ -165,7 +174,7 @@ const getRestaurantbyId = (id) => {
 const postToCart = (data) => {
   const reqObj = {
     data,
-    url: '/api/carts',
+    url: 'https://zomatostrapi.herokuapp.com/api/carts',
     headers: {
       Authorization: `bearer ${localStorage.getItem('token')}`,
     },
@@ -180,7 +189,7 @@ const postToCart = (data) => {
 // Function to get all the items from cart
 const getCart = () => {
   const reqObj = {
-    url: '/api/carts',
+    url: 'https://zomatostrapi.herokuapp.com/api/carts',
     headers: {
       Authorization: `bearer ${localStorage.getItem('token')}`,
     },
@@ -197,7 +206,7 @@ const getCart = () => {
 const updateCart = (data, id) => {
   const reqObj = {
     data,
-    url: `/api/carts/${id}`,
+    url: `https://zomatostrapi.herokuapp.com/api/carts/${id}`,
     headers: {
       Authorization: `bearer ${localStorage.getItem('token')}`,
     },
@@ -213,7 +222,7 @@ const updateCart = (data, id) => {
 // Function to delete the items from the cart
 const deleteCart = (id) => {
   const reqObj = {
-    url: `/api/carts/${id}`,
+    url: `https://zomatostrapi.herokuapp.com/api/carts/${id}`,
     headers: {
       Authorization: `bearer ${localStorage.getItem('token')}`,
     },
@@ -230,7 +239,7 @@ const deleteCart = (id) => {
 const postToOrder = (data) => {
   const reqObj = {
     data,
-    url: '/api/orders',
+    url: 'https://zomatostrapi.herokuapp.com/api/orders',
     headers: {
       'Content-type': 'application/json',
     },
@@ -246,7 +255,7 @@ const postToOrder = (data) => {
 // Function to get all the order items
 const getOrder = () => {
   const reqObj = {
-    url: '/api/orders',
+    url: 'https://zomatostrapi.herokuapp.com/api/orders',
     headers: {
       'Content-type': 'application/json',
     },

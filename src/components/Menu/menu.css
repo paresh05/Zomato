@@ -14,6 +14,12 @@
     max-height: calc(100vh - 200px);
     overflow: hidden auto;
   }
+  .dishImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    margin-right: 2rem;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 1250px) {
   .dishDetails {
@@ -31,6 +37,12 @@
     max-height: calc(100vh - 200px);
     overflow: hidden auto;
   }
+  .dishImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    margin-right: 2rem;
+  }
 }
 @media screen and (min-width: 0px) and (max-width: 600px) {
   .dishDetails {
@@ -41,6 +53,12 @@
   }
   .categories {
     display: none;
+  }
+  .dishImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    margin-right: 1rem;
   }
 }
 .menuDetails {
@@ -58,14 +76,9 @@
 }
 .dishes {
   display: flex;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 0px 10px 20px;
 }
-.dishImage {
-  width: 130px;
-  height: 130px;
-  border-radius: 5px;
-  margin-right: 2rem;
-}
+
 .orderOnline {
   line-height: 1.2;
   color: rgb(28, 28, 28);

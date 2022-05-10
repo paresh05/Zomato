@@ -23,3 +23,8 @@ export const fetchHotelName = (name) => ({
   type: ActionTypes.HOTELNAME,
   payload: name,
 });
+
+export const fetchFoodItem = (food) => ({
+  type: ActionTypes.FOODITEM,
+  payload: food,
+});

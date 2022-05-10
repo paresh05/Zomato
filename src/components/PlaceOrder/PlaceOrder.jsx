@@ -36,8 +36,7 @@ function PlaceOrder() {
                 alt="logo"
               />
             </div>
-            <div className="summary">
-              <h5 className="summaryTitle">Summary</h5>
+            <div className="summarry">
               <div className="summaryBody">
                 <div className="orderFrom">
                   <p className="orderFromTitle">ORDER SUMMARY</p>
@@ -58,14 +57,33 @@ function PlaceOrder() {
                 </div>
                 <div className="totalPrice">
                   <div className="subTotal">
-                    <p className="grandTotalTitle">Grandtotal</p>
+                    <p className="grandTotalTitle">Grand Total</p>
                     <p className="grandTotalPrice">
                       Rs.
                       {order[order.length - 1].attributes.totalPrice + 15}
                     </p>
                   </div>
                 </div>
-                <hr className="summaryDivider" />
+              </div>
+              <div style={{ marginTop: '20px' }} className="summaryBody">
+                <div className="deliveryAdd">
+                  <p className="orderFromTitle">DELIVERY ADDRESS</p>
+                  <p className="orderHotelTitle">
+                    {order[order.length - 1].attributes.deliveryAddress.address}
+                    ,
+                    {order[order.length - 1].attributes.deliveryAddress.city}
+                    ,
+                  </p>
+                  <p className="orderHotelTitle">
+                    {order[order.length - 1].attributes.deliveryAddress.state}
+                    -
+                    {order[order.length - 1].attributes.deliveryAddress.pinCode}
+                  </p>
+                  <p className="orderedLocation">
+                    Mobile Number -
+                    {order[order.length - 1].attributes.deliveryAddress.mobile}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
